@@ -492,17 +492,18 @@ a:focus-visible {
 .process-line {
   display: flex;
   align-items: center;
-  gap: 9px;
+  flex-wrap: wrap;
+  gap: 6px 9px;
   margin-top: 27px;
   padding-block: 15px;
   border-block: 1px solid #edf0f4;
   color: #59687f;
   font-family: var(--mono);
   font-size: 8px;
-  white-space: nowrap;
+  white-space: normal;
 }
 
-.process-line b, .compact-process b { color: #9ca9ba; font-weight: 400; }
+.process-item b { flex: 0 0 auto; color: #9ca9ba; font-weight: 400; }
 
 .card-link {
   display: inline-flex;
@@ -1026,24 +1027,23 @@ a:focus-visible {
 
 .process-line,
 .compact-process {
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 9px;
   min-width: 0;
   white-space: normal;
 }
 
-.process-line > span,
-.compact-process > span {
+.process-item {
   display: inline-flex;
   flex: 0 0 auto;
-  align-items: baseline;
+  align-items: center;
   gap: 6px;
   white-space: nowrap;
 }
 
-.process-line > span > b,
-.compact-process > span > b {
-  flex: 0 0 auto;
-}
+.process-item-last { margin-right: 0; }
 
 .result-chips span,
 .source-list span {
