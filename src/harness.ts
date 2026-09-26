@@ -24,6 +24,7 @@ const requiredContent: ReadonlyArray<ContentCheck> = [
   { label: "research-oriented hero subcopy", fragment: "반복적인 데이터 수집과 리서치 과정을 구조화했습니다." },
   { label: "official data workflow in hero", fragment: "Official sources" },
   { label: "five-step research output caption", fragment: "DATA TO RESEARCH OUTPUT" },
+  { label: "revised Selected Work heading", fragment: "From market data to research." },
   { label: "macro and market research capability", fragment: "Rates · FX · Economic Indicators · Cross-Asset" },
   { label: "quant validation capability", fragment: "Time Series · Regression · Bootstrap · Walk-Forward" },
   { label: "financial data capability", fragment: "Python · SQL · API · Data Validation" },
@@ -33,6 +34,7 @@ const requiredContent: ReadonlyArray<ContentCheck> = [
   { label: "official macro data sources", fragment: "U.S. Treasury</span><i>·</i><span>Cboe" },
   { label: "K-Skill upstream contribution proof", fragment: "https://github.com/NomaDamas/k-skill/pull/675" },
   { label: "BOK policy and curve analysis", fragment: "한국은행 통화정책과<br>KTB 금리곡선 분석" },
+  { label: "BOK category frames it as research", fragment: "MACRO <i>·</i> RATES RESEARCH" },
   { label: "BOK event sample and observations", fragment: "금융통화위원회 결정 38회를 대상으로 국고채 3년물과 10년물 1,151개 일별 관측치" },
   { label: "BOK event windows", fragment: "D-1 / D+1 / D+5" },
   { label: "BOK interpretation counts", fragment: "D+1 기준 3s10s 확대는 20회였고" },
@@ -46,7 +48,11 @@ const requiredContent: ReadonlyArray<ContentCheck> = [
   { label: "data-to-output workflow heading", fragment: "From data to<br>research output." },
   { label: "research workflow nine-step endpoints", fragment: "Source Identification" },
   { label: "research workflow reusable automation", fragment: "Reusable Research Workflow · LLM" },
-  { label: "additional K-ICS research", fragment: "Dynamic K-ICS FX Hedging" },
+  { label: "Research Output uses final wording", fragment: "Morning Briefing · Strategy Materials · Ad Hoc Requests" },
+  { label: "capabilities section is numbered third", fragment: "03 / CAPABILITIES" },
+  { label: "background section is numbered fourth", fragment: "04 / BACKGROUND" },
+  { label: "credentials section is numbered fifth", fragment: "05 / CREDENTIALS" },
+  { label: "contact section is numbered sixth", fragment: "06 / CONTACT" },
   { label: "Macro Research capabilities", fragment: "Market Data Validation" },
   { label: "education and activities", fragment: "Hanyang University, Seoul" },
   { label: "Global IB report monitoring", fragment: "Global IB Report Monitoring" },
@@ -73,6 +79,14 @@ assert.ok(titlePositions.every((position: number, index: number): boolean => ind
 assert.ok(selectedWork.indexOf("project-featured project-flagship") < selectedWork.indexOf("project-featured project-rates"), "K-Skill and BOK projects must be the two featured cards");
 passedChecks.push("four projects appear in the requested order and hierarchy");
 
+const sectionLabels: string[] = ["01 / SELECTED WORK", "02 / RESEARCH WORKFLOW", "03 / CAPABILITIES", "04 / BACKGROUND", "05 / CREDENTIALS", "06 / CONTACT"];
+const sectionPositions: number[] = sectionLabels.map((label: string): number => html.indexOf(label));
+assert.ok(sectionPositions.every((position: number): boolean => position >= 0), "All six sections must have the updated numbering");
+assert.ok(sectionPositions.every((position: number, index: number): boolean => index === 0 || position > (sectionPositions[index - 1] ?? -1)), "Sections must follow the requested 01–06 order");
+assert.doesNotMatch(html, /03 \/ ADDITIONAL RESEARCH|Dynamic K-ICS FX Hedging|K-ICS/);
+assert.doesNotMatch(stylesheet, /\.additional-grid|\.additional-card|\.additional-top|\.tag-row|\.mobile-break/);
+passedChecks.push("Additional Research removed and six sections renumbered");
+
 const ids: string[] = Array.from(html.matchAll(/\bid="([^"]+)"/g))
   .map((match: RegExpMatchArray): string | undefined => match[1])
   .filter((id: string | undefined): id is string => id !== undefined);
@@ -93,10 +107,11 @@ const requiredLinks: ReadonlyArray<string> = [
   "https://github.com/bucheoncityboy/krw-rates-integrated-research",
   "https://github.com/bucheoncityboy/us-robust-live-ops",
   "https://github.com/bucheoncityboy/fama-french-integrated-research",
-  "https://github.com/bucheoncityboy/Dynamic-Shield-K-ICS-AI",
   "https://www.linkedin.com/in/jaewon-kim-kr/",
 ];
 for (const link of requiredLinks) assert.ok(html.includes('href="' + link + '"'), "Missing public project or profile link: " + link);
+assert.equal((html.match(/href="https:\/\/github\.com\/bucheoncityboy"/g) ?? []).length, 3, "Header, hero, and contact GitHub links must target the profile");
+assert.doesNotMatch(html, /github\.com\/bucheoncityboy\/portfolio-index/);
 assert.ok(repositoryLinks.length >= 8, "Project cards and upstream proof must have public repository links");
 assert.doesNotMatch(html, /\b010[- ]\d{3,4}[- ]\d{4}\b/, "A phone number must not be published");
 assert.doesNotMatch(html, /AI Engineer|ML Engineer|Python Developer|Software Engineer|Data Scientist/i, "The page must lead with a research identity");
