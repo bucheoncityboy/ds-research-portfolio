@@ -875,7 +875,7 @@ a:focus-visible {
   .project-description { font-size: 11px; }
   .process-line { flex-wrap: wrap; white-space: normal; gap: 6px; font-size: 7px; }
   .project-featured-side { min-height: 182px; padding: 18px 21px 16px; border-top: 1px solid #e4e9f0; border-left: 0; }
-  .featured-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-block: 15px; }
+  .featured-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-block: 15px; }
   .featured-metric { display: grid; gap: 3px; }
   .featured-metric strong { font-size: 17px; }
   .featured-metric > span { text-align: left; font-size: 8px; }
@@ -920,7 +920,7 @@ a:focus-visible {
   .contact-layout { grid-template-columns: 1fr; gap: 25px; }
   .contact-layout h2 { font-size: 36px; }
   .contact-links a { grid-template-columns: 54px minmax(0, 1fr) 16px; gap: 8px; min-height: 53px; }
-  .contact-links strong { overflow-wrap: anywhere; font-size: 10px; }
+  .contact-links strong { word-break: normal; overflow-wrap: break-word; font-size: 10px; }
   .footer-inner { flex-wrap: wrap; gap: 9px 15px; }
   .footer-inner p { order: 3; width: 100%; font-size: 7px; }
 }
@@ -960,4 +960,112 @@ a:focus-visible {
 @media (max-width: 980px) {
   .project-flagship .featured-metric strong,
   .project-rates .featured-metric strong { font-size: 12px; }
+}
+
+/* Preserve word boundaries while allowing responsive wrapping. */
+.project-description,
+.section-intro,
+.hero-lede,
+.hero-english,
+.activity-item > p,
+.skills-heading > p,
+.capability p,
+.skill-row > span:last-child,
+.education-major,
+.project-subtitle,
+.project-automation blockquote,
+.metric-pair span,
+.supporting-note {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.project-featured h3,
+.project-standard h3,
+.section-heading h2,
+.skills-heading h2,
+.contact-layout h2,
+.project-automation h3,
+.education-panel h3,
+.activity-head h3 {
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.project-category,
+.project-badge,
+.side-label,
+.panel-label,
+.detail-label,
+.ops-steps strong,
+.ops-tag {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.project-category,
+.project-badge {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.project-overline > *,
+.section-heading > *,
+.hero-layout > *,
+.project-featured-main,
+.project-featured-side,
+.project-standard,
+.project-automation > *,
+.ops-steps li,
+.skills-layout > *,
+.skill-row > *,
+.background-grid > *,
+.contact-layout > * {
+  min-width: 0;
+}
+
+.process-line,
+.compact-process {
+  flex-wrap: wrap;
+  min-width: 0;
+  white-space: normal;
+}
+
+.process-line > span,
+.compact-process > span {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: baseline;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.process-line > span > b,
+.compact-process > span > b {
+  flex: 0 0 auto;
+}
+
+.result-chips span,
+.source-list span {
+  white-space: nowrap;
+}
+
+.featured-metric { min-width: 0; }
+.featured-metric strong { flex: 0 0 auto; }
+.featured-metric > span {
+  min-width: 0;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.ops-steps li {
+  grid-template-columns: 30px minmax(210px, .9fr) minmax(280px, 1.1fr);
+}
+
+@media (max-width: 720px) {
+  .ops-steps li { grid-template-columns: 28px minmax(0, 1fr); }
+}
+
+@media (max-width: 390px) {
+  .ops-steps li { grid-template-columns: 25px minmax(0, 1fr); }
 }
