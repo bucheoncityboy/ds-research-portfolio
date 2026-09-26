@@ -907,6 +907,7 @@ a:focus-visible {
 /* DS macro / quant portfolio refinements */
 .project-featured + .project-featured { margin-top: 20px; }
 .project-featured.project-flagship { border-color: #d9e1eb; }
+.project-flagship .project-featured-main > .project-description + .project-description { margin-top: 10px; }
 .project-flagship .project-featured-main > .project-description,
 .project-rates .project-featured-main > .project-description { max-width: 760px; }
 .project-flagship .featured-metric strong,
