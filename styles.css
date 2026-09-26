@@ -719,6 +719,7 @@ a:focus-visible {
 .section-heading-compact { margin-bottom: 30px; }
 .section-heading-compact h2 { font-size: clamp(29px, 3.7vw, 40px); }
 .section-heading-compact .section-intro { max-width: 350px; font-size: 12px; }
+.background-section .section-heading-compact .section-intro { max-width: 520px; }
 
 .skills-section { padding-block: 87px; border-block: 1px solid var(--line); background: #f1f3f6; }
 
