@@ -31,6 +31,7 @@ const requiredContent: ReadonlyArray<ContentCheck> = [
   { label: "K-Skill time reduction", fragment: "약 40분 걸리던 시간을 10분 이내로 줄였습니다." },
   { label: "K-Skill accepted feature", fragment: "‘Multi-Asset Morning Briefing’이라는 정식 기능으로 채택됐습니다." },
   { label: "K-Skill official contributor badge", fragment: "K-SKILL · OFFICIAL CONTRIBUTOR" },
+  { label: "K-Skill badge points to the accepted feature documentation", fragment: "href=\"https://github.com/NomaDamas/k-skill/blob/main/docs/features/multi-asset-morning-briefing.md\"" },
   { label: "K-Skill time metric", fragment: "40<span> min</span> <i>→</i> &lt;10<span> min</span>" },
   { label: "K-Skill upstream PR link", fragment: "https://github.com/NomaDamas/k-skill/pull/675" },
   { label: "KTB research question", fragment: "같은 정책 방향에서도 만기별 금리 반응은 달라질 수 있다고 보고 3년물과 10년물의 상대적인 움직임을 중심으로 금통위 전후의 커브 변화를 살펴봤습니다." },
@@ -84,6 +85,7 @@ const repositoryLinks: string[] = Array.from(html.matchAll(/href="(https:\/\/git
 const requiredLinks: ReadonlyArray<string> = [
   "https://github.com/bucheoncityboy/multi-asset-morning-briefing",
   "https://github.com/NomaDamas/k-skill/pull/675",
+  "https://github.com/NomaDamas/k-skill/blob/main/docs/features/multi-asset-morning-briefing.md",
   "https://github.com/bucheoncityboy/krw-rates-integrated-research",
   "https://github.com/bucheoncityboy/us-robust-live-ops",
   "https://www.linkedin.com/in/jaewon-kim-kr/",
