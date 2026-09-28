@@ -73,6 +73,11 @@ const cardClassPositions: number[] = [
 ];
 assert.ok(cardClassPositions.every((position: number): boolean => position >= 0), "The three projects must retain their featured and standard card styles");
 assert.ok(cardClassPositions.every((position: number, index: number): boolean => index === 0 || position > (cardClassPositions[index - 1] ?? -1)), "Project card hierarchy and order must be preserved");
+const selectedDescriptions: string[] = selectedWork.match(/<p class="project-description">[\s\S]*?<\/p>/g) ?? [];
+assert.ok(selectedDescriptions.length > 0, "Selected Work descriptions must remain present");
+assert.ok(selectedDescriptions.every((description: string): boolean => !/<br\b/i.test(description)), "Project description paragraphs must wrap naturally");
+assert.doesNotMatch(html, /<p class="hero-lede">[^<]*<br\b/i, "Hero descriptions must wrap naturally");
+assert.doesNotMatch(stylesheet, /text-align:\s*justify/i, "Body copy must not use justified alignment");
 
 const workflowSection: string = html.split('id="research"')[1]?.split('class="section skills-section"')[0] ?? "";
 const workflowSteps: string[] = ["Source Identification", "Data Collection", "Validation", "Macro Analysis", "Quant Analysis", "Statistical Validation", "Market Context", "Research Output", "Automation"];
@@ -112,6 +117,11 @@ assert.match(stylesheet, /--blue:\s*#4169a1/);
 assert.match(stylesheet, /@media \(max-width: 980px\)/);
 assert.match(stylesheet, /@media \(max-width: 720px\)/);
 assert.match(stylesheet, /\.project-grid > \.project-standard:only-child\s*\{\s*grid-column:\s*1 \/ -1/);
+assert.match(stylesheet, /\.project-rates \.project-featured-main > \.project-description\s*\{\s*max-width:\s*720px/);
+assert.match(stylesheet, /\.project-standard \.project-description\s*\{\s*max-width:\s*820px;\s*font-size:\s*12\.5px/);
+assert.match(stylesheet, /text-align:\s*left;\s*text-wrap:\s*pretty/);
+assert.match(stylesheet, /word-break:\s*keep-all;\s*overflow-wrap:\s*break-word/);
+assert.match(stylesheet, /\.project-rates \.project-featured-main > \.project-description \+ \.project-description\s*\{\s*margin-top:\s*14px/);
 
 for (const check of requiredContent) console.log("PASS " + check.label);
 console.log("PASS three Selected Work projects with Fama-French retained in Background only");
