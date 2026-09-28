@@ -78,10 +78,10 @@
           <article class="project-card project-featured project-flagship">
             <div class="project-featured-main">
               <div class="project-overline"><span class="project-number">01</span><span class="project-category">MACRO RESEARCH <i>·</i> DATA AUTOMATION</span><a class="project-badge project-badge-light" href="https://github.com/NomaDamas/k-skill/pull/675" target="_blank" rel="noreferrer">K-SKILL · OFFICIAL CONTRIBUTOR <span aria-hidden="true">↗</span></a></div>
-              <h3>K-Skill 오픈소스 반영:<br>금융시장 리서치 프로세스 자동화</h3>
-              <p class="project-description"><span class="detail-label">RESEARCH WORKFLOW</span>글로벌마켓학회에서 정기적으로 일간 및 주간 시장 브리핑을 준비하며 국내외 시장데이터와 뉴스, 글로벌 IB 리포트를 검토했습니다. 반복되는 데이터 수집과 검증 업무를 줄이고자 멀티에셋 모닝 브리핑 스킬을 개발했습니다.</p>
-              <p class="project-description"><span class="detail-label">DATA &amp; VALIDATION</span>Python으로 한국은행 ECOS와 FRED를 연동하고, 환율은 ECB, 미국 국채금리는 U.S. Treasury, VIX는 Cboe 공식 데이터를 활용했습니다. 각 데이터의 기준일·세션·출처를 확인하고 확보되지 않은 값은 임의로 보완하지 않도록 검증 규칙을 적용했습니다.</p>
-              <p class="project-description"><span class="detail-label">RESULT</span>실제 시장 브리핑에서 사용하던 데이터 수집과 검증 절차를 재사용 가능한 형태로 구현했습니다. 해당 기능은 K-Skill 오픈소스 프로젝트에 PR #675로 병합됐습니다.</p>
+              <h3>글로벌 시장 브리핑 자동화:<br>K-Skill 정식 기능 채택</h3>
+              <p class="project-description"><span class="detail-label">RESEARCH WORKFLOW</span>글로벌마켓학회에서 일간 및 주간 시장 브리핑을 작성하면서 시장별 거래일과 데이터 제공기관, 업데이트 시점이 달라 기준일을 반복해서 확인해야 했습니다. 기준 시점이 어긋나면 시장 움직임에 대한 해석도 달라질 수 있어, 실제 브리핑 과정을 데이터 수집, 기준일 확인, 검증, 자산별 정리 단계로 나누고 각 단계의 판단 기준을 규칙화했습니다.</p>
+              <p class="project-description"><span class="detail-label">DATA &amp; VALIDATION</span>Python으로 한국은행 ECOS와 FRED를 연동하고 환율은 ECB, 미국 국채금리는 U.S. Treasury, VIX는 Cboe에서 수집했습니다. 자산별 실제 거래일을 먼저 확인해 해당 날짜의 데이터를 불러오고 휴장일에는 직전 거래일을 적용했습니다. 확보하지 못한 값은 임의로 채우지 않았으며, 각 수치에는 출처와 기준일을 함께 기록했습니다.</p>
+              <p class="project-description"><span class="detail-label">RESULT</span>완성한 스킬을 실제 브리핑에 반복 적용하며 거래일 불일치와 데이터 누락을 점검하고 처리 규칙을 수정했습니다. 그 결과 시장데이터 수집과 브리핑 작성에 약 40분 걸리던 시간을 10분 이내로 줄였습니다. 이후 K-Skill 오픈소스에 기여해 ‘Multi-Asset Morning Briefing’이라는 정식 기능으로 채택됐습니다.</p>
               <div class="source-list"><span>ECOS</span><i>·</i><span>FRED</span><i>·</i><span>ECB</span><i>·</i><span>U.S. Treasury</span><i>·</i><span>Cboe</span></div>
               <div class="process-line process-line-wrap" aria-label="Official data, session and date validation, market context, cross-asset analysis, morning briefing"><span class="process-item"><span>Official Data</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Session / Date Validation</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Market Context</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Cross-Asset Analysis</span><b aria-hidden="true">→</b></span><span class="process-item process-item-last"><span>Morning Briefing</span></span></div>
               <div class="project-links"><a class="card-link" href="https://github.com/bucheoncityboy/multi-asset-morning-briefing" target="_blank" rel="noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a><a class="card-link" href="https://github.com/NomaDamas/k-skill/pull/675" target="_blank" rel="noreferrer">View upstream PR #675 <span aria-hidden="true">↗</span></a></div>
@@ -90,9 +90,9 @@
               <p class="side-label">RESEARCH OUTPUT · DATA CONTROLS</p>
               <div class="featured-metrics">
                 <div class="featured-metric"><strong>Official</strong><span>Data sources</span></div>
-                <div class="featured-metric"><strong>Source / Date</strong><span>Validation rules</span></div>
+                <div class="featured-metric"><strong>40<span> min</span> <i>→</i> &lt;10<span> min</span></strong><span>Briefing workflow</span></div>
                 <div class="featured-metric"><strong>PR #675</strong><span>Merged upstream</span></div>
-                <div class="featured-metric"><strong>K-Skill</strong><span>Open-source contributor</span></div>
+                <div class="featured-metric"><strong>K-Skill</strong><span>Official contributor</span></div>
               </div>
               <div class="side-footnote"><span class="signal-dot"></span><span>REUSABLE WORKFLOW<br>USED FOR GLOBAL MARKET BRIEFINGS</span></div>
             </aside>
@@ -102,9 +102,9 @@
             <div class="project-featured-main">
               <div class="project-overline"><span class="project-number">02</span><span class="project-category">MACRO <i>·</i> RATES RESEARCH</span></div>
               <h3>한국은행 통화정책과<br>KTB 금리곡선 분석</h3>
-              <p class="project-description"><span class="detail-label">RESEARCH QUESTION</span>한국은행 기준금리 결정이 국고채 금리곡선에 어떻게 반영되고, 관찰된 반응을 실제 시장 판단에 활용할 수 있는지 분석했습니다.</p>
-              <p class="project-description"><span class="detail-label">ANALYSIS</span>금융통화위원회 결정 38회를 대상으로 국고채 3년물과 10년물 1,151개 일별 관측치를 D-1, D+1, D+5 기준으로 비교했습니다. 미국 국채 2년·10년물과 USD/KRW도 함께 확인했습니다.</p>
-              <p class="project-description"><span class="detail-label">RESULT &amp; INTERPRETATION</span>D+1 기준 3s10s 확대는 20회였고, 3년물 절대 변동폭이 10년물보다 큰 경우는 23회였습니다. 정책 방향만으로 커브 반응을 일반화하기 어렵고, 사전 시장 프라이싱과 정책 경로, 대외 변수를 함께 확인해야 한다는 기준을 정립했습니다.</p>
+              <p class="project-description"><span class="detail-label">RESEARCH QUESTION</span>글로벌마켓학회에서 금융통화위원회 결정 이후 국고채 금리곡선이 어떤 패턴으로 움직이는지 확인하고, 관찰된 움직임을 실제 거래 판단에 활용할 수 있는지 분석했습니다. 같은 정책 방향에서도 만기별 금리 반응은 달라질 수 있다고 보고 3년물과 10년물의 상대적인 움직임을 중심으로 금통위 전후의 커브 변화를 살펴봤습니다.</p>
+              <p class="project-description"><span class="detail-label">ANALYSIS</span>총 38차례의 금융통화위원회를 대상으로 국고채 3년물과 10년물의 일별 관측치 1,151개를 분석했습니다. 발표 전일과 발표 후 1일, 5일의 움직임을 비교한 결과 발표 다음 날 3s10s 스프레드가 확대된 경우는 20회였고, 3년물의 절대 변동폭이 10년물보다 컸던 경우는 23회였습니다. 단기물이 더 크게 반응한 사례는 비교적 많았지만 커브의 방향과 변동폭이 일관되게 반복되지는 않았습니다.</p>
+              <p class="project-description"><span class="detail-label">RESULT &amp; INTERPRETATION</span>사후 가격 움직임과 실제 사전에 활용할 수 있는 거래 정보를 구분해 추가 검증했습니다. 당시 기준금리 컨센서스와 정책경로를 확인해 결정이 시장에 얼마나 반영돼 있었는지 살펴보고, 미국 국채금리와 USD/KRW 등 대외 변수도 함께 확인했습니다. 이후 KRX 3년 및 10년 국채선물을 활용해 동일 DV01 기준의 상대가치 전략을 구성하고 거래비용과 잔여위험을 점검했습니다. 분석 결과 정책 방향만으로는 일관된 거래 신호를 만들기 어려웠으며, 사전 시장 pricing과 정책경로, 당시 커브를 함께 확인해야 한다는 결론을 도출했습니다.</p>
               <div class="result-chips"><span>UST 2Y · 10Y</span><span>USD/KRW</span><span>Equal-DV01</span><span>Transaction Cost · Residual Risk</span></div>
               <div class="process-line process-line-wrap" aria-label="Policy decision, market pricing, KTB curve, external variables, interpretation"><span class="process-item"><span>Policy Decision</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Market Pricing</span><b aria-hidden="true">→</b></span><span class="process-item"><span>KTB Curve</span><b aria-hidden="true">→</b></span><span class="process-item"><span>External Variables</span><b aria-hidden="true">→</b></span><span class="process-item process-item-last"><span>Interpretation</span></span></div>
               <a class="card-link" href="https://github.com/bucheoncityboy/krw-rates-integrated-research" target="_blank" rel="noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a>
@@ -124,13 +124,12 @@
           <div class="project-grid">
             <article class="project-card project-standard">
               <div class="project-overline"><span class="project-number">03</span><span class="project-category">QUANT STRATEGY <i>·</i> BACKTEST VALIDATION</span></div>
-              <h3>미국 대형주 팩터전략<br>검증 및 백테스트</h3>
-              <p class="project-description"><span class="detail-label">APPROACH</span>미국 대형주 팩터전략을 설계하고 IS/OOS를 분리해 시간순 5-Fold Walk-Forward 방식으로 검증했습니다. 월말 신호는 다음 영업일 시가 체결을 가정하고 왕복 10bp의 거래비용을 반영했으며, 후행 데이터만 사용했습니다.</p>
-              <p class="project-description"><span class="detail-label">VALIDATION</span>IID Bootstrap과 Block Bootstrap으로 통계적 유의성을 확인하고 파라미터 민감도 분석으로 과적합 가능성을 점검했습니다.</p>
-              <p class="project-description"><span class="detail-label">IMPLEMENTATION</span>검증된 전략을 바탕으로 종목 선정, 목표비중 산출, 주문 생성 과정을 구현했으며 실계좌 주문 경로를 시험해 매수 29건과 매도 29건의 체결을 확인했습니다.</p>
+              <h3>미국 대형주 팩터전략<br>OOS 검증 및 백테스트</h3>
+              <p class="project-description"><span class="detail-label">APPROACH</span>개인 프로젝트로 미국 대형주 팩터전략을 설계하고, 과거 데이터에서 확인한 성과가 새로운 기간에서도 유지되는지 검증했습니다. 실제 투자 시점에서 확인할 수 있는 정보만 사용해 전략을 평가하는 데 초점을 맞췄습니다. IS와 OOS를 분리하고 시간순 5개 Fold의 Walk-Forward 방식을 적용했으며, 월말 신호는 다음 영업일 시가에 체결하고 왕복 10bp의 거래비용을 반영했습니다.</p>
+              <p class="project-description"><span class="detail-label">VALIDATION</span>각 시점에서 확인 가능한 데이터만 사용해 미래정보 누수를 통제했습니다. 이후 IID 및 Block Bootstrap으로 통계적 유의성을 확인하고, 파라미터 민감도 검증을 통해 성과가 특정 기간이나 설정에 의존하는지도 점검했습니다.</p>
+              <p class="project-description"><span class="detail-label">IMPLEMENTATION</span>검증한 전략은 매월 종목 선정과 목표 비중 계산까지 자동화해, 월별 리밸런싱 포트폴리오를 같은 기준으로 다시 생성할 수 있도록 구현했습니다.</p>
               <div class="result-chips"><span>5-Fold Walk-Forward</span><span>OOS Validation</span><span>IID / Block Bootstrap</span><span>Parameter Sensitivity</span><span>10bp Round-trip Cost</span></div>
-              <div class="compact-process"><span class="process-item"><span>Signal</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Walk-Forward</span><b aria-hidden="true">→</b></span><span class="process-item"><span>OOS</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Bootstrap</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Sensitivity</span><b aria-hidden="true">→</b></span><span class="process-item process-item-last"><span>Implementation</span></span></div>
-              <p class="supporting-note">ORDER-PATH TEST · 29 BUY / 29 SELL FILLS CONFIRMED · NOT LONG-TERM PERFORMANCE</p>
+              <div class="compact-process"><span class="process-item"><span>Signal</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Walk-Forward</span><b aria-hidden="true">→</b></span><span class="process-item"><span>OOS</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Bootstrap</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Sensitivity</span><b aria-hidden="true">→</b></span><span class="process-item process-item-last"><span>Monthly Portfolio</span></span></div>
               <a class="card-link" href="https://github.com/bucheoncityboy/us-robust-live-ops" target="_blank" rel="noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a>
             </article>
 
