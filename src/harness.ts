@@ -40,10 +40,10 @@ const requiredContent: ReadonlyArray<ContentCheck> = [
   { label: "KTB event results", fragment: "3s10s 스프레드가 확대된 경우는 20회였고" },
   { label: "KTB relative value and risk review", fragment: "동일 DV01 기준의 상대가치 전략을 구성하고 거래비용과 잔여위험을 점검했습니다." },
   { label: "KTB result chips", fragment: "Transaction Cost · Residual Risk" },
-  { label: "US factor OOS title", fragment: "미국 대형주 팩터전략<br>OOS 검증 및 백테스트" },
-  { label: "US factor walk-forward method", fragment: "시간순 5개 Fold의 Walk-Forward 방식을 적용했으며" },
-  { label: "US factor IID bootstrap validation", fragment: "IID 및 Block Bootstrap으로 통계적 유의성을 확인하고" },
-  { label: "US factor monthly portfolio implementation", fragment: "월별 리밸런싱 포트폴리오를 같은 기준으로 다시 생성할 수 있도록 구현했습니다." },
+  { label: "US factor OOS title", fragment: "미국 대형주 팩터전략<br>Walk-Forward 검증 및 백테스트" },
+  { label: "US factor walk-forward method", fragment: "확장형 Walk-Forward 검증을 5회 수행했습니다." },
+  { label: "US factor IID bootstrap validation", fragment: "IID 및 Block Bootstrap과 파라미터 민감도 분석으로" },
+  { label: "US factor monthly portfolio implementation", fragment: "고정 60/20/20 운용 전략과 구간마다 후보를 다시 선택하는 검증 결과를 구분해 기록했습니다." },
   { label: "US factor result chips", fragment: "IID / Block Bootstrap</span><span>Parameter Sensitivity" },
   { label: "Research Workflow heading", fragment: "02 / RESEARCH WORKFLOW" },
   { label: "Research Workflow nine-step endpoints", fragment: "Source Identification" },
@@ -59,7 +59,7 @@ for (const check of requiredContent) {
 const projectTitles: string[] = [
   "글로벌 시장 브리핑 자동화:<br>K-Skill 정식 기능 채택",
   "한국은행 통화정책과<br>KTB 금리곡선 분석",
-  "미국 대형주 팩터전략<br>OOS 검증 및 백테스트",
+  "미국 대형주 팩터전략<br>Walk-Forward 검증 및 백테스트",
 ];
 const titlePositions: number[] = projectTitles.map((title: string): number => selectedWork.indexOf(title));
 assert.ok(titlePositions.every((position: number): boolean => position >= 0), "All three current projects must appear in Selected Work");

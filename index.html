@@ -124,13 +124,14 @@
           <div class="project-grid">
             <article class="project-card project-standard">
               <div class="project-overline"><span class="project-number">03</span><span class="project-category">QUANT STRATEGY <i>·</i> BACKTEST VALIDATION</span></div>
-              <h3>미국 대형주 팩터전략<br>OOS 검증 및 백테스트</h3>
-              <p class="project-description"><span class="detail-label">APPROACH</span>개인 프로젝트로 미국 대형주 팩터전략을 설계하고, 과거 데이터에서 확인한 성과가 새로운 기간에서도 유지되는지 검증했습니다. 실제 투자 시점에서 확인할 수 있는 정보만 사용해 전략을 평가하는 데 초점을 맞췄습니다. IS와 OOS를 분리하고 시간순 5개 Fold의 Walk-Forward 방식을 적용했으며, 월말 신호는 다음 영업일 시가에 체결하고 왕복 10bp의 거래비용을 반영했습니다.</p>
-              <p class="project-description"><span class="detail-label">VALIDATION</span>각 시점에서 확인 가능한 데이터만 사용해 미래정보 누수를 통제했습니다. 이후 IID 및 Block Bootstrap으로 통계적 유의성을 확인하고, 파라미터 민감도 검증을 통해 성과가 특정 기간이나 설정에 의존하는지도 점검했습니다.</p>
-              <p class="project-description"><span class="detail-label">IMPLEMENTATION</span>검증한 전략은 매월 종목 선정과 목표 비중 계산까지 자동화해, 월별 리밸런싱 포트폴리오를 같은 기준으로 다시 생성할 수 있도록 구현했습니다.</p>
-              <div class="result-chips"><span>5-Fold Walk-Forward</span><span>OOS Validation</span><span>IID / Block Bootstrap</span><span>Parameter Sensitivity</span><span>10bp Round-trip Cost</span></div>
+              <h3>미국 대형주 팩터전략<br>Walk-Forward 검증 및 백테스트</h3>
+              <p class="project-description"><span class="detail-label">APPROACH</span>미국 대형주 팩터전략의 후보 4개를 대상으로 과거 학습 구간의 정보비율만으로 전략을 선택하고, 다음 6개월의 성과를 평가하는 확장형 Walk-Forward 검증을 5회 수행했습니다. 월말 신호는 익영업일 시가에 체결하고 왕복 10bp의 거래비용을 반영했습니다.</p>
+              <p class="project-description"><span class="detail-label">VALIDATION</span>2024년 1월부터 2026년 6월까지 5개 평가 구간 모두 SPY 대비 초과수익을 확인했습니다. 기존 고정 전략 연구에서는 IID 및 Block Bootstrap과 파라미터 민감도 분석으로 표본과 설정에 따른 성과 변화를 점검했습니다. 새 검증은 이미 연구한 후보를 사용한 사후 평가이며, 현재 구성종목 사용에 따른 생존편향은 남아 있습니다.</p>
+              <p class="project-description"><span class="detail-label">IMPLEMENTATION</span>검증에 사용한 로직을 바탕으로 종목 선정과 목표 비중 산출을 자동화했습니다. 고정 60/20/20 운용 전략과 구간마다 후보를 다시 선택하는 검증 결과를 구분해 기록했습니다.</p>
+              <div class="result-chips"><span>5 × 6-Month Walk-Forward</span><span>5/5 vs SPY</span><span>IID / Block Bootstrap</span><span>Parameter Sensitivity</span><span>10bp Round-trip Cost</span></div>
               <div class="compact-process"><span class="process-item"><span>Signal</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Walk-Forward</span><b aria-hidden="true">→</b></span><span class="process-item"><span>OOS</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Bootstrap</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Sensitivity</span><b aria-hidden="true">→</b></span><span class="process-item process-item-last"><span>Monthly Portfolio</span></span></div>
               <a class="card-link" href="https://github.com/bucheoncityboy/us-robust-live-ops" target="_blank" rel="noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a>
+              <a class="card-link" href="https://github.com/bucheoncityboy/us-robust-live-ops/tree/main/results/walk_forward_validation" target="_blank" rel="noopener noreferrer">View Walk-Forward results ↗</a>
             </article>
 
           </div>
