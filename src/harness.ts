@@ -38,7 +38,7 @@ const requiredContent: ReadonlyArray<ContentCheck> = [
   { label: "KTB event count and observations", fragment: "총 38차례의 금융통화위원회를 대상으로 국고채 3년물과 10년물의 일별 관측치 1,151개를 분석했습니다." },
   { label: "KTB event windows", fragment: "D-1 / D+1 / D+5" },
   { label: "KTB event results", fragment: "3s10s 스프레드가 확대된 경우는 20회였고" },
-  { label: "KTB relative value and risk review", fragment: "동일 DV01 기준의 상대가치 전략을 구성하고 거래비용과 잔여위험을 점검했습니다." },
+  { label: "KTB relative value and risk review", fragment: "양쪽의 DV01을 맞춘 상대가치 포지션을 연구상 구성하고 거래비용과 잔여위험을 점검했습니다." },
   { label: "KTB result chips", fragment: "Transaction Cost · Residual Risk" },
   { label: "US factor OOS title", fragment: "미국 대형주 팩터전략<br>Walk-Forward 검증 및 백테스트" },
   { label: "US factor walk-forward method", fragment: "확장형 Walk-Forward 검증을 5회 수행했습니다." },
@@ -47,7 +47,7 @@ const requiredContent: ReadonlyArray<ContentCheck> = [
   { label: "US factor result chips", fragment: "IID / Block Bootstrap</span><span>Parameter Sensitivity" },
   { label: "Research Workflow heading", fragment: "02 / RESEARCH WORKFLOW" },
   { label: "Research Workflow nine-step endpoints", fragment: "Source Identification" },
-  { label: "Research Output wording", fragment: "Morning Briefing · Strategy Materials · Ad Hoc Requests" },
+  { label: "Research Output wording", fragment: "Market Briefings · Research Presentations · Analysis Reports" },
   { label: "Background retains Fama-French activity", fragment: "Fama-French Research <i>·</i> Quantitative Finance Research" },
   { label: "Contact remains present", fragment: "06 / CONTACT" },
 ];

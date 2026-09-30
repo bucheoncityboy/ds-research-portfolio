@@ -104,7 +104,7 @@
               <h3>한국은행 통화정책과<br>KTB 금리곡선 분석</h3>
               <p class="project-description"><span class="detail-label">RESEARCH QUESTION</span>글로벌마켓학회에서 금융통화위원회 결정 이후 국고채 금리곡선이 어떤 패턴으로 움직이는지 확인하고, 관찰된 움직임을 실제 거래 판단에 활용할 수 있는지 분석했습니다. 같은 정책 방향에서도 만기별 금리 반응은 달라질 수 있다고 보고 3년물과 10년물의 상대적인 움직임을 중심으로 금통위 전후의 커브 변화를 살펴봤습니다.</p>
               <p class="project-description"><span class="detail-label">ANALYSIS</span>총 38차례의 금융통화위원회를 대상으로 국고채 3년물과 10년물의 일별 관측치 1,151개를 분석했습니다. 발표 전일과 발표 후 1일, 5일의 움직임을 비교한 결과 발표 다음 날 3s10s 스프레드가 확대된 경우는 20회였고, 3년물의 절대 변동폭이 10년물보다 컸던 경우는 23회였습니다. 단기물이 더 크게 반응한 사례는 비교적 많았지만 커브의 방향과 변동폭이 일관되게 반복되지는 않았습니다.</p>
-              <p class="project-description"><span class="detail-label">RESULT &amp; INTERPRETATION</span>사후 가격 움직임과 실제 사전에 활용할 수 있는 거래 정보를 구분해 추가 검증했습니다. 당시 기준금리 컨센서스와 정책경로를 확인해 결정이 시장에 얼마나 반영돼 있었는지 살펴보고, 미국 국채금리와 USD/KRW 등 대외 변수도 함께 확인했습니다. 이후 KRX 3년 및 10년 국채선물을 활용해 동일 DV01 기준의 상대가치 전략을 구성하고 거래비용과 잔여위험을 점검했습니다. 분석 결과 정책 방향만으로는 일관된 거래 신호를 만들기 어려웠으며, 사전 시장 pricing과 정책경로, 당시 커브를 함께 확인해야 한다는 결론을 도출했습니다.</p>
+              <p class="project-description"><span class="detail-label">RESULT &amp; INTERPRETATION</span>사후 가격 움직임과 실제 사전에 활용할 수 있는 거래 정보를 구분해 추가 검증했습니다. 당시 기준금리 컨센서스와 정책경로를 확인해 결정이 시장에 얼마나 반영돼 있었는지 살펴보고, 미국 국채금리와 USD/KRW 등 대외 변수도 함께 확인했습니다. 이후 KRX 3년 및 10년 국채선물을 활용해 양쪽의 DV01을 맞춘 상대가치 포지션을 연구상 구성하고 거래비용과 잔여위험을 점검했습니다. 분석 결과 정책 방향만으로는 일관된 거래 신호를 만들기 어려웠으며, 사전 시장 pricing과 정책경로, 당시 커브를 함께 확인해야 한다는 결론을 도출했습니다.</p>
               <div class="result-chips"><span>UST 2Y · 10Y</span><span>USD/KRW</span><span>Equal-DV01</span><span>Transaction Cost · Residual Risk</span></div>
               <div class="process-line process-line-wrap" aria-label="Policy decision, market pricing, KTB curve, external variables, interpretation"><span class="process-item"><span>Policy Decision</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Market Pricing</span><b aria-hidden="true">→</b></span><span class="process-item"><span>KTB Curve</span><b aria-hidden="true">→</b></span><span class="process-item"><span>External Variables</span><b aria-hidden="true">→</b></span><span class="process-item process-item-last"><span>Interpretation</span></span></div>
               <a class="card-link" href="https://github.com/bucheoncityboy/krw-rates-integrated-research" target="_blank" rel="noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a>
@@ -129,7 +129,11 @@
               <p class="project-description"><span class="detail-label">VALIDATION</span>2024년 1월부터 2026년 6월까지 5개 평가 구간 모두 SPY 대비 초과수익을 확인했습니다. 기존 고정 전략 연구에서는 IID 및 Block Bootstrap과 파라미터 민감도 분석으로 표본과 설정에 따른 성과 변화를 점검했습니다. 새 검증은 이미 연구한 후보를 사용한 사후 평가이며, 현재 구성종목 사용에 따른 생존편향은 남아 있습니다.</p>
               <p class="project-description"><span class="detail-label">IMPLEMENTATION</span>검증에 사용한 로직을 바탕으로 종목 선정과 목표 비중 산출을 자동화했습니다. 고정 60/20/20 운용 전략과 구간마다 후보를 다시 선택하는 검증 결과를 구분해 기록했습니다.</p>
               <div class="result-chips"><span>5 × 6-Month Walk-Forward</span><span>5/5 vs SPY</span><span>IID / Block Bootstrap</span><span>Parameter Sensitivity</span><span>10bp Round-trip Cost</span></div>
-              <div class="compact-process"><span class="process-item"><span>Signal</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Walk-Forward</span><b aria-hidden="true">→</b></span><span class="process-item"><span>OOS</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Bootstrap</span><b aria-hidden="true">→</b></span><span class="process-item"><span>Sensitivity</span><b aria-hidden="true">→</b></span><span class="process-item process-item-last"><span>Monthly Portfolio</span></span></div>
+              <div class="quant-research-tracks" aria-label="연구와 운용 구분">
+                <p class="project-description"><span class="detail-label">고정 전략 연구</span>Bootstrap · 파라미터 민감도 분석</p>
+                <p class="project-description"><span class="detail-label">후보 선택 검증</span>Walk-Forward · 구간별 성과 평가</p>
+                <p class="project-description"><span class="detail-label">월별 운용</span>고정 60/20/20 전략의 종목 선정 · 목표 비중 산출</p>
+              </div>
               <a class="card-link" href="https://github.com/bucheoncityboy/us-robust-live-ops" target="_blank" rel="noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a>
               <a class="card-link" href="https://github.com/bucheoncityboy/us-robust-live-ops/tree/main/results/walk_forward_validation" target="_blank" rel="noopener noreferrer">View Walk-Forward results ↗</a>
             </article>
@@ -153,7 +157,7 @@
               <li><span class="ops-index">05</span><strong>Quant Analysis</strong><span class="ops-tag">Regression · Factor · Time Series</span></li>
               <li><span class="ops-index">06</span><strong>Statistical Validation</strong><span class="ops-tag">Bootstrap · Walk-Forward · OOS</span></li>
               <li><span class="ops-index">07</span><strong>Market Context</strong><span class="ops-tag">News · Reports · Policy Expectations</span></li>
-              <li><span class="ops-index">08</span><strong>Research Output</strong><span class="ops-tag">Morning Briefing · Strategy Materials · Ad Hoc Requests</span></li>
+              <li><span class="ops-index">08</span><strong>Research Output</strong><span class="ops-tag">Market Briefings · Research Presentations · Analysis Reports</span></li>
               <li><span class="ops-index">09</span><strong>Automation</strong><span class="ops-tag">Reusable Research Workflow · LLM</span></li>
             </ol>
           </div>
