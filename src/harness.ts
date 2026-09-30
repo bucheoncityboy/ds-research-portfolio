@@ -76,7 +76,9 @@ assert.ok(cardClassPositions.every((position: number, index: number): boolean =>
 const selectedDescriptions: string[] = selectedWork.match(/<p class="project-description">[\s\S]*?<\/p>/g) ?? [];
 assert.ok(selectedDescriptions.length > 0, "Selected Work descriptions must remain present");
 assert.ok(selectedDescriptions.every((description: string): boolean => !/<br\b/i.test(description)), "Project description paragraphs must wrap naturally");
-assert.doesNotMatch(html, /<p class="hero-lede">[^<]*<br\b/i, "Hero descriptions must wrap naturally");
+assert.ok(html.includes('검증해,<br class="meaning-break"> 매크로·퀀트 분석'), "Hero statement must break at the requested meaning boundary");
+assert.equal((selectedWork.match(/class="project-description project-continuation"/g) ?? []).length, 2, "KTB analysis and interpretation must have separate continuation paragraphs");
+assert.ok(html.includes('href="https://github.com/bucheoncityboy/portfolio-index"'), "Top GitHub links must point to portfolio-index");
 assert.doesNotMatch(stylesheet, /text-align:\s*justify/i, "Body copy must not use justified alignment");
 
 const workflowSection: string = html.split('id="research"')[1]?.split('class="section skills-section"')[0] ?? "";

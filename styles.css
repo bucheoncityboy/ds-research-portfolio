@@ -907,6 +907,7 @@ a:focus-visible {
 .project-featured.project-flagship { border-color: #d9e1eb; }
 .project-flagship .project-featured-main > .project-description + .project-description { margin-top: 16px; }
 .project-rates .project-featured-main > .project-description + .project-description { margin-top: 16px; }
+.project-rates .project-featured-main > .project-description + .project-continuation { margin-top: 7px; }
 .project-flagship .project-featured-main > .project-description,
 .project-rates .project-featured-main > .project-description { max-width: 720px; }
 .project-standard .project-description + .project-description { margin-top: 14px; }
@@ -932,8 +933,10 @@ a:focus-visible {
 }
 
 @media (max-width: 720px) {
+  .meaning-break { display: none; }
   .project-flagship .project-featured-main > .project-description + .project-description,
   .project-rates .project-featured-main > .project-description + .project-description { margin-top: 14px; }
+  .project-rates .project-featured-main > .project-description + .project-continuation { margin-top: 7px; }
   .project-standard .project-description + .project-description { margin-top: 12px; }
 }
 
