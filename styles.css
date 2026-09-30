@@ -194,6 +194,7 @@ a:focus-visible {
   font-size: 12px;
   line-height: 1.7;
 }
+.hero-english .keep-together { white-space: nowrap; }
 
 .hero-actions {
   display: flex;
